@@ -2,7 +2,7 @@
   <div class="home-page">
     <h1 class="title">{{ t("hello") }}</h1>
     <label for="params" class="params">
-      <span>通用参数(空时使用默认参数)</span>
+      <span class="label">通用参数(空时使用默认参数)</span>
       <textarea
         id="params"
         v-model="paramsBind"
@@ -11,6 +11,7 @@
         placeholder="输入json字符串"
       />
     </label>
+    <div class="label">查看console</div>
     <BaseButton
       :disabled="!account"
       class="l-btn"
@@ -65,6 +66,12 @@
       label="getRewardFeeAmount"
       @click="governance.callGetRewardFeeAmount()"
     />
+    <BaseButton
+      :disabled="!account"
+      class="l-btn"
+      label="signMessage"
+      @click="governance.callSignMessage(params)"
+    />
   </div>
 </template>
 
@@ -92,9 +99,7 @@ const params = computed(() => {
 
 <style lang="scss" scoped>
 .home-page {
-  height: 100%;
   padding: 6vw;
-  letter-spacing: 1px;
 }
 
 .title {
@@ -111,6 +116,11 @@ const params = computed(() => {
   margin-top: 2vw;
   height: 30vw;
   font-size: 5vw;
+  line-height: 6vw;
+}
+
+.label {
+  font-size: 4vw;
   line-height: 6vw;
 }
 

@@ -15,6 +15,11 @@ const stakeDefaultParams: StakeParams = {
   ...defaultGas,
 };
 
+export const callSignMessage = async (params = { message: "hello" }) => {
+  const result = await client.api.message.signMessage(params);
+  console.log("signMessage 结果", result);
+};
+
 export const callStakePeers = async (
   params: StakeParams = stakeDefaultParams
 ) => {
