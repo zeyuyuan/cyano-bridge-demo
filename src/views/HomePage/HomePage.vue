@@ -1,6 +1,12 @@
 <template>
   <div class="home-page">
     <h1 class="title">{{ t("hello") }}</h1>
+    <div class="label">
+      <div>Repo:</div>
+      <a class="link" href="https://github.com/zeyuyuan/cyano-bridge-demo">
+        https://github.com/zeyuyuan/cyano-bridge-demo
+      </a>
+    </div>
     <label for="params" class="params">
       <span class="label">通用参数(空时使用默认参数)</span>
       <textarea
@@ -99,7 +105,7 @@ const params = computed(() => {
 
 <style lang="scss" scoped>
 .home-page {
-  padding: 6vw;
+  padding: 0 6vw 6vw;
 }
 
 .title {
@@ -115,8 +121,8 @@ const params = computed(() => {
   width: 100%;
   margin-top: 2vw;
   height: 30vw;
-  font-size: 5vw;
-  line-height: 6vw;
+  font-size: 4vw;
+  line-height: 5vw;
 }
 
 .label {
@@ -127,5 +133,9 @@ const params = computed(() => {
 .l-btn {
   display: block;
   margin-top: 5vw;
+}
+
+.link {
+  text-decoration: underline;
 }
 </style>
